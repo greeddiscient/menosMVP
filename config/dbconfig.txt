@@ -1,0 +1,34 @@
+mentors
+  id
+  name
+  company
+  position
+  education
+  background
+  photo
+  cover
+
+
+users
+
+query
+  mentor
+  askedBy
+  content
+
+followup
+  threadid
+  askedBy
+  content
+
+thread
+  mentors
+  query
+    askedBy
+    content
+  responses
+    followUp
+      askedBy
+      content
+    mentor
+    content
