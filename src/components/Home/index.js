@@ -25,7 +25,7 @@ class Home extends Component {
   }
   getProfileData(){
     var that=this
-    window.IN.API.Profile("me").fields("id,firstName,lastName,email-address,picture-urls::(original),public-profile-url,location:(name)").result(function (me) {
+    window.IN.API.Profile("me").fields("id,firstName,lastName,email-address,headline,picture-urls::(original),public-profile-url,location:(name)").result(function (me) {
         var profile = me.values[0];
         var id = profile.id;
         var firstName = profile.firstName;
@@ -33,19 +33,36 @@ class Home extends Component {
         var emailAddress = profile.emailAddress;
         var pictureUrl = profile.pictureUrls.values[0];
         var profileUrl = profile.publicProfileUrl;
+        var headline = profile.headline
         var country = profile.location.name;
-        localStorage.setItem('firstName', firstName)
-        console.log('saved to localstorage during get profile', localStorage.getItem('firstName'))
+        var user={
+          id: id,
+          firstName: firstName,
+          lastName: lastName,
+          headline: headline,
+          emailAddress: emailAddress,
+          pictureUrl: pictureUrl,
+          profileUrl: profileUrl,
+          country: country
+        }
+
+        sessionStorage.setItem('user', JSON.stringify(user))
+        sessionStorage.setItem('loggedIn', 'true')
         that.setState({
-          profile: profile,
           firstName: firstName,
           lastName: lastName,
           emailAddress: emailAddress,
           pictureUrl: pictureUrl,
           profileUrl: profileUrl
         })
+        axios.post('/api/users', user)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     })
-    console.log("testwindow",window.profile)
   }
 
   getState(){

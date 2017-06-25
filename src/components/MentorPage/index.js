@@ -4,11 +4,16 @@ import { Link } from 'react-router-dom';
 import NotFoundPage from '../NotFoundPage';
 import mentors from '../../data/mentors';
 import NavBar from'../NavBar';
+import axios from 'axios';
 
 export default class MentorPage extends React.Component {
   constructor(props){
     super(props)
+    this.state={
+      question: ''
+    }
   }
+
   renderDirectionalButtons(index){
     if (index ==0){
       var prevMentor= mentors[mentors.length-1];
@@ -24,6 +29,7 @@ export default class MentorPage extends React.Component {
       var nextMentor= mentors[index+1];
 
     }
+
     return(
       <div className="directional-buttons">
         <Link to={`/mentors/${prevMentor.id}`}>
@@ -40,10 +46,65 @@ export default class MentorPage extends React.Component {
           </div>
         </Link>
       </div>
-
-
-
     )
+  }
+  handleChange(event) {
+    this.setState({question: event.target.value});
+  }
+
+  handleSubmit(event) {
+    if(window.IN.User.isAuthorized()){
+      event.preventDefault();
+    }
+    else{
+      alert("You need to Log in with LinkedIn first")
+      event.preventDefault();
+      this.lilogin()
+    }
+  }
+  lilogin(){
+    window.IN.UI.Authorize().params({"scope":["r_basicprofile", "r_emailaddress"]}).place();
+    window.IN.Event.on(window.IN, 'auth', this.getProfileData.bind(this));
+  }
+  getProfileData(){
+    var that=this
+    window.IN.API.Profile("me").fields("id,firstName,lastName,email-address,headline,picture-urls::(original),public-profile-url,location:(name)").result(function (me) {
+        var profile = me.values[0];
+        var id = profile.id;
+        var firstName = profile.firstName;
+        var lastName = profile.lastName;
+        var emailAddress = profile.emailAddress;
+        var pictureUrl = profile.pictureUrls.values[0];
+        var profileUrl = profile.publicProfileUrl;
+        var headline = profile.headline
+        var country = profile.location.name;
+        var user={
+          id: id,
+          firstName: firstName,
+          lastName: lastName,
+          headline: headline,
+          emailAddress: emailAddress,
+          pictureUrl: pictureUrl,
+          profileUrl: profileUrl,
+          country: country
+        }
+        sessionStorage.setItem('user', JSON.stringify(user))
+        sessionStorage.setItem('loggedIn', 'true')
+        that.setState({
+          firstName: firstName,
+          lastName: lastName,
+          emailAddress: emailAddress,
+          pictureUrl: pictureUrl,
+          profileUrl: profileUrl
+        })
+        axios.post('/api/users', user)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    })
   }
 
   render() {
@@ -107,8 +168,15 @@ export default class MentorPage extends React.Component {
                 {mentor.story}
               </div>
               <h1 className="profile-label">
-                Ask Me Anything
+                Ask Me Anything (AMA)
               </h1>
+              <form onSubmit={this.handleSubmit.bind(this)}>
+                <label>
+                  Ask {mentor.name} Anything:
+                  <input type="text" value={this.state.question} onChange={this.handleChange.bind(this)} />
+                </label>
+                <input type="submit" value="Ask" />
+              </form>
               <h1 className="profile-label">
                 Threads
               </h1>

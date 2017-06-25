@@ -241,6 +241,31 @@ MongoClient.connect(dburl.url, (err, db) => {
       }
     });
   })
+  app.post('/api/users', (req, res) => {
+    const user = req.body;
+
+    db.collection('users').findOne({id: req.body.id}, (err, result) => {
+      if (err) {
+
+      } else {
+        if (result==null){
+          db.collection('users').insert(user, (err, result) => {
+            if (err) {
+              res.send({ 'error': 'insert error' });
+            } else {
+              res.send(result.ops[0]);
+              console.log(result);
+            }
+          });
+
+        }
+        else{
+          res.send({ 'error': 'user exists' });
+        }
+
+      }
+    });
+  });
   app.get('/test',(req,res)=>{
     axios.get('https://api.linkedin.com/v1/people/~?oauth2_access_token=AQVpy6A6N7zWhmUJ6eC8ojSCvPiy4X8NY0DKZaZGSlFHo27zpiO5b771I4ERo123bbEHj1GS0QLaxmQ0GmSMItfU61mErHeueicsJhasHgkhSMsWKCHwfVn9Pxb7o87Zxozd5n1VcXjFRR6WmmpXJKjU9d5-1U-OjYrx6k4z59Atx3kd7jA')
     .then(function (response) {

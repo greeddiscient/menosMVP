@@ -37,6 +37,9 @@ export default class NavBar extends React.Component {
             <NavItem eventKey={3}>About</NavItem>
           </LinkContainer>
         </Nav>
+        <Navbar.Text pullRight>
+          Loggedin as {sessionStorage.getItem('loggedIn')==='true' ? JSON.parse(sessionStorage.getItem('user')).firstName : "Guest" }
+        </Navbar.Text>
 
       </Navbar>
       </div>
