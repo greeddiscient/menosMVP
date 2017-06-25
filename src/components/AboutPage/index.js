@@ -3,11 +3,55 @@ import React from 'react';
 import NavBar from'../NavBar';
 
 export default class AboutPage extends React.Component {
+  constructor(props){
+    super(props)
+  }
+  testAuth(){
+    if(window.IN.User.isAuthorized()){
+      console.log(true)
+    }
+    else{
+      this.lilogin()
+    }
+
+
+  }
+
+  lilogin(){
+    window.IN.UI.Authorize().params({"scope":["r_basicprofile", "r_emailaddress"]}).place();
+    window.IN.Event.on(window.IN, 'auth', this.getProfileData.bind(this));
+  }
+  getProfileData(){
+    var that=this
+    window.IN.API.Profile("me").fields("id,firstName,lastName,email-address,picture-urls::(original),public-profile-url,location:(name)").result(function (me) {
+        var profile = me.values[0];
+        var id = profile.id;
+        var firstName = profile.firstName;
+        var lastName = profile.lastName;
+        var emailAddress = profile.emailAddress;
+        var pictureUrl = profile.pictureUrls.values[0];
+        var profileUrl = profile.publicProfileUrl;
+        var country = profile.location.name;
+        localStorage.setItem('firstName', firstName)
+        console.log('saved to localstorage during get profile', localStorage.getItem('firstName'))
+        that.setState({
+          profile: profile,
+          firstName: firstName,
+          lastName: lastName,
+          emailAddress: emailAddress,
+          pictureUrl: pictureUrl,
+          profileUrl: profileUrl
+        })
+    })
+    console.log("testwindow",window.profile)
+  }
+
   render() {
     return (
 
       <div className="home">
       <NavBar/>
+      <h1 onClick={this.testAuth.bind(this)}>TEST AUTHORZIE</h1>
       <h1 className="about-header-label">About</h1>
       <div className="about">
 

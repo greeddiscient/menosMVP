@@ -6,6 +6,7 @@ const bodyParser     = require('body-parser');
 const ObjectID = require('mongodb').ObjectID;
 const app = express();
 const dburl             = require('../config/db');
+var axios = require('axios');
 
 app.use(bodyParser.json());
 
@@ -240,7 +241,16 @@ MongoClient.connect(dburl.url, (err, db) => {
       }
     });
   })
-
+  app.get('/test',(req,res)=>{
+    axios.get('https://api.linkedin.com/v1/people/~?oauth2_access_token=AQVpy6A6N7zWhmUJ6eC8ojSCvPiy4X8NY0DKZaZGSlFHo27zpiO5b771I4ERo123bbEHj1GS0QLaxmQ0GmSMItfU61mErHeueicsJhasHgkhSMsWKCHwfVn9Pxb7o87Zxozd5n1VcXjFRR6WmmpXJKjU9d5-1U-OjYrx6k4z59Atx3kd7jA')
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    res.send('success')
+  })
 
 
   // Always return the main index.html, so react-router render the route in the client

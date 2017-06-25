@@ -106,6 +106,12 @@ export default class MentorPage extends React.Component {
               <div className="story profile-content">
                 {mentor.story}
               </div>
+              <h1 className="profile-label">
+                Ask Me Anything
+              </h1>
+              <h1 className="profile-label">
+                Threads
+              </h1>
             </div>
         </div>
 

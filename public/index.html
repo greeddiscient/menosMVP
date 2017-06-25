@@ -16,6 +16,29 @@
       type="image/png"
       href="../src/img/menosfavicon.png">
     <script src="https://use.fontawesome.com/44c9ace169.js"></script>
+    <script type="text/javascript" src="//platform.linkedin.com/in.js">
+      api_key: 812c2a4l0yy5pe
+      authorize: true
+    </script>
+    <script>
+      var liLogin = function() { // Setup an event listener to make an API call once auth is complete
+          IN.UI.Authorize().params({"scope":["r_basicprofile", "r_emailaddress"]}).place();
+          IN.Event.on(IN, 'auth', getProfileData);
+      }
+
+      var getProfileData = function() { // Use the API call wrapper to request the member's basic profile data
+          IN.API.Profile("me").fields("id,firstName,lastName,email-address,picture-urls::(original),public-profile-url,location:(name)").result(function (me) {
+              var profile = me.values[0];
+              var id = profile.id;
+              var firstName = profile.firstName;
+              var lastName = profile.lastName;
+              var emailAddress = profile.emailAddress;
+              var pictureUrl = profile.pictureUrls.values[0];
+              var profileUrl = profile.publicProfileUrl;
+              var country = profile.location.name;
+          });
+      }
+  </script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
