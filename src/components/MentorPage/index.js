@@ -9,8 +9,12 @@ import axios from 'axios';
 export default class MentorPage extends React.Component {
   constructor(props){
     super(props)
+
+    const mentorid = this.props.match.params.id;
+    const mentor = mentors.filter((mentor) => mentor.id === mentorid)[0];
     this.state={
-      question: ''
+      question: '',
+      mentor: mentor
     }
   }
 
@@ -48,13 +52,32 @@ export default class MentorPage extends React.Component {
       </div>
     )
   }
-  handleChange(event) {
+  questionChange(event) {
     this.setState({question: event.target.value});
   }
 
-  handleSubmit(event) {
+  submitQuestion(event) {
+    var mentor= this.state.mentor
+    console.log("mentorobj",this.state.mentor)
     if(window.IN.User.isAuthorized()){
-      event.preventDefault();
+      event.preventDefault()
+      console.log("user is authorized")
+      axios.post('/api/new_query',
+      {
+        "mentor": this.state.mentor.id,
+        "askedBy": JSON.parse(sessionStorage.getItem('user')),
+        "content": this.state.question
+      })
+      .then(function (response) {
+
+        alert("You will be notified when "+mentor.name+ " replies")
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      this.setState({question: ''})
+
     }
     else{
       alert("You need to Log in with LinkedIn first")
@@ -108,6 +131,8 @@ export default class MentorPage extends React.Component {
   }
 
   render() {
+
+
     const mentorid = this.props.match.params.id;
     const mentor = mentors.filter((mentor) => mentor.id === mentorid)[0];
     if (!mentor) {
@@ -170,10 +195,10 @@ export default class MentorPage extends React.Component {
               <h1 className="profile-label">
                 Ask Me Anything (AMA)
               </h1>
-              <form onSubmit={this.handleSubmit.bind(this)}>
+              <form onSubmit={this.submitQuestion.bind(this)}>
                 <label>
                   Ask {mentor.name} Anything:
-                  <input type="text" value={this.state.question} onChange={this.handleChange.bind(this)} />
+                  <input type="text" value={this.state.question} onChange={this.questionChange.bind(this)} />
                 </label>
                 <input type="submit" value="Ask" />
               </form>

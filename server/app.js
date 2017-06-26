@@ -13,8 +13,11 @@ app.use(bodyParser.json());
 MongoClient.connect(dburl.url, (err, db) => {
   if (err) return console.log(err)
   // Serve static assets
-  app.use(express.static(path.resolve(__dirname, '..', 'build')));
-
+  app.use('/',express.static(path.resolve(__dirname, '..', 'build')));
+  app.use('/mentorPortal',express.static(path.resolve(__dirname, '../mentorPortal', 'build')));
+  app.get('/mentorPortal/*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../mentorPortal', 'build', 'index.html'));
+  });
 
   // API routes
   //
@@ -46,8 +49,8 @@ MongoClient.connect(dburl.url, (err, db) => {
     //   "content": "lets go"
     // }
     var query = req.body
-    query.mentor = new ObjectID(query.mentor)
-    query.askedBy = new ObjectID(query.askedBy)
+    // query.mentor = new ObjectID(query.mentor)
+    // query.askedBy = new ObjectID(query.askedBy)
     console.log(req.body);
 
     db.collection('queries').insert(query, (err, result) => {
@@ -279,7 +282,7 @@ MongoClient.connect(dburl.url, (err, db) => {
 
 
   // Always return the main index.html, so react-router render the route in the client
-  app.get('*', (req, res) => {
+  app.get('/*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
   });
 
