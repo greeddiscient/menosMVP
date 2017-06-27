@@ -60,17 +60,18 @@ MongoClient.connect(dburl.url, (err, db) => {
   app.get('/queries/:mentorid',(req,res)=>{
     var obj=[];
     console.log(req.params.userid)
-    db.collection('queries').find({mentor:{"$in":[new ObjectID(req.params.mentorid)]}}, (err, result) => {
+    db.collection('queries').find({mentor:{"$in":[req.params.mentorid]}}, (err, result) => {
       if (err) {
         res.send({ 'error': 'An error has occurred' });
       } else {
 
         result.each(function(err, docs){
             console.log("item", docs);
-            obj.push(docs);
+
             if (docs == null){
                 res.send(obj);
             }
+            obj.push(docs);
 
         });
 
@@ -99,40 +100,40 @@ MongoClient.connect(dburl.url, (err, db) => {
     // }
     var query = req.body
     console.log(req.body);
-    query.mentors=[new ObjectID(query.mentors[0])]
-    query.query.askedBy= new ObjectID(query.query.askedBy)
-    query.responses=[{"mentor": new ObjectID(query.responses[0].mentor), "content": query.responses[0].content }]
     db.collection('threads').insert(query, (err, result) => {
       if (err) {
         res.send({ 'error': 'An error has occurred' });
       } else {
-        res.send(result.ops[0]);
         console.log(result);
+        db.collection('queries').remove({"_id": new ObjectID(query.query._id)}, (err, result) => {
+          if (err) {
+            res.send({ 'error': 'An error has occurred' });
+          } else {
+            res.send({'remove': 'successful'});
+            console.log(result);
+          }
+        });
+
+
       }
     });
-    db.collection('queries').remove({"_id": new ObjectID(query.query.id)}, (err, result) => {
-      if (err) {
-        res.send({ 'error': 'An error has occurred' });
-      } else {
-        res.send({'remove': 'successful'});
-        console.log(result);
-      }
-    });
+
   })
+
   app.get('/threads/:mentorid',(req,res)=>{
     var obj=[];
-    db.collection('threads').find({mentors:{"$in":[new ObjectID(req.params.mentorid)]}}, (err, result) => {
+    db.collection('threads').find({mentors:{"$in":[req.params.mentorid]}}, (err, result) => {
       if (err) {
         res.send({ 'error': 'An error has occurred' });
       } else {
 
         result.each(function(err, docs){
             console.log("item", docs);
-            obj.push(docs);
+
             if (docs == null){
                 res.send(obj);
             }
-
+            obj.push(docs);
         });
 
       }

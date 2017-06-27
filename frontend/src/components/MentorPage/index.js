@@ -14,10 +14,84 @@ export default class MentorPage extends React.Component {
     const mentor = mentors.filter((mentor) => mentor.id === mentorid)[0];
     this.state={
       question: '',
-      mentor: mentor
+      mentor: mentor,
+      threads: [],
+      threadFollowUps: [],
     }
+
+  }
+  componentDidMount(){
+    this.getMentorThreads()
+  }
+  getMentorThreads(){
+
+    var that= this
+    axios.get('http://api.lvh.me:9000/threads/'+this.state.mentor.id, {
+    })
+    .then(function (response) {
+      console.log(response);
+      that.setState({threads: response.data})
+      var threadFollowUps=[]
+      for(var i=0;i<response.data.length;i++){
+        threadFollowUps.push('')
+      }
+      that.setState({threadFollowUps: threadFollowUps})
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  }
+  renderMentorResponses(thread){
+
+    var rows=[]
+    for(var i=0;i<thread.responses.length;i++){
+      var responseObj=thread.responses[i]
+      if(JSON.stringify(responseObj.followUp) === JSON.stringify({})){
+        rows.push(
+          <div className="mentor-response">
+            <h1>{responseObj.mentor} responded: {responseObj.content}</h1>
+          </div>
+        )
+      }
+      else{
+        console.log("its a followup")
+      }
+    }
+    return(rows)
   }
 
+  renderThreads(){
+    var threads = this.state.threads
+    console.log("threads",threads)
+    return(
+      <div>
+        {threads.map((thread,index)=>(
+          <div className= "thread-content">
+            <h1>Query: {thread.query.content}</h1>
+            <h1>Asked by: {thread.query.askedBy.firstName}</h1>
+            {this.renderMentorResponses(thread)}
+            <form className="followup-thread" onSubmit={this.followUpThread.bind(this,index)}>
+              <label>
+                Ask a followup to {this.state.mentor.name}:
+                <input type="text" value={this.state.threadFollowUps[index]} onChange={this.followUpChange.bind(this,index)} />
+              </label>
+              <input type="submit" value="Respond" />
+            </form>
+          </div>
+        ))}
+      </div>
+    )
+  }
+  followUpThread(index,event){
+    event.preventDefault()
+    alert("You followed up to this thread")
+  }
+  followUpChange(index,event){
+    var threadFollowUps= this.state.threadFollowUps
+    threadFollowUps[index]=event.target.value
+    this.setState({threadFollowUps: threadFollowUps});
+  }
   renderDirectionalButtons(index){
     if (index ==0){
       var prevMentor= mentors[mentors.length-1];
@@ -62,7 +136,7 @@ export default class MentorPage extends React.Component {
     if(window.IN.User.isAuthorized()){
       event.preventDefault()
       console.log("user is authorized")
-      axios.post('/api/new_query',
+      axios.post('http://api.lvh.me:9000/new_query',
       {
         "mentor": this.state.mentor.id,
         "askedBy": JSON.parse(sessionStorage.getItem('user')),
@@ -120,7 +194,7 @@ export default class MentorPage extends React.Component {
           pictureUrl: pictureUrl,
           profileUrl: profileUrl
         })
-        axios.post('/api/users', user)
+        axios.post('http://api.lvh.me:9000/users', user)
         .then(function (response) {
           console.log(response);
         })
@@ -205,6 +279,7 @@ export default class MentorPage extends React.Component {
               <h1 className="profile-label">
                 Threads
               </h1>
+              {this.renderThreads()}
             </div>
         </div>
 
