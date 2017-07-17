@@ -20,13 +20,36 @@ export default class MentorPage extends React.Component {
     }
 
   }
-  componentDidMount(){
-    this.getMentorThreads()
-  }
-  getMentorThreads(){
+  componentWillReceiveProps(nextProps){
+    const mentorid = nextProps.match.params.id;
+    const mentor = mentors.filter((mentor) => mentor.id === mentorid)[0];
+    this.setState({
+      question: '',
+      mentor: mentor,
+      threads: [],
+      threadFollowUps: [],
+    })
+    this.getMentorThreads(mentorid)
+    console.log("componentreceivedprops")
 
+  }
+  componentDidMount(){
+    const mentorid = this.props.match.params.id;
+    const mentor = mentors.filter((mentor) => mentor.id === mentorid)[0];
+    this.setState({
+      question: '',
+      mentor: mentor,
+      threads: [],
+      threadFollowUps: [],
+    })
+    this.getMentorThreads(mentorid)
+    console.log("componentmounted")
+
+  }
+  getMentorThreads(mentorid){
+    console.log("getting mentor threads for"+mentorid)
     var that= this
-    axios.get('http://api.lvh.me:9000/threads/'+this.state.mentor.id, {
+    axios.get('http://api.lvh.me:9000/threads/'+mentorid, {
     })
     .then(function (response) {
       console.log(response);
@@ -71,21 +94,56 @@ export default class MentorPage extends React.Component {
             <h1>Query: {thread.query.content}</h1>
             <h1>Asked by: {thread.query.askedBy.firstName}</h1>
             {this.renderMentorResponses(thread)}
-            <form className="followup-thread" onSubmit={this.followUpThread.bind(this,index)}>
+            <form className="followup-thread" onSubmit={this.submitFollowUpThread.bind(this,index)}>
               <label>
                 Ask a followup to {this.state.mentor.name}:
                 <input type="text" value={this.state.threadFollowUps[index]} onChange={this.followUpChange.bind(this,index)} />
               </label>
-              <input type="submit" value="Respond" />
+              <input type="submit" value="Followup" />
             </form>
           </div>
         ))}
       </div>
     )
   }
-  followUpThread(index,event){
-    event.preventDefault()
-    alert("You followed up to this thread")
+  submitFollowUpThread(index,event){
+    var mentor= this.state.mentor
+    var thread= this.state.threads[index]
+    if(window.IN.User.isAuthorized()){
+      event.preventDefault()
+      console.log("user is authorized")
+      // {
+      //   "threadid": "594a421e8473c84fa06677b4",
+      //   "mentors":["594a3089734d1d4955bd0c41","594a3311734d1d4955bd0daf"]
+      //   "askedBy": "594a3311734d1d4955bd0daf",
+      //   "content": "lets go"
+      // }
+      axios.post('http://api.lvh.me:9000/followup',
+      {
+        "threadid": thread._id,
+        "mentors": thread.mentors,
+        "askedBy": JSON.parse(sessionStorage.getItem('user')),
+        "content": this.state.threadFollowUps[index]
+      })
+      .then(function (response) {
+
+        alert("You followed up to this thread. You will be notified when "+mentor.name+ " replies")
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      var copyThreadFollowups= this.state.threadFollowUps
+      copyThreadFollowups[index]=''
+      this.setState({threadFollowUps: copyThreadFollowups})
+
+    }
+    else{
+      alert("You need to Log in with LinkedIn first")
+      event.preventDefault();
+      this.lilogin()
+    }
+
   }
   followUpChange(index,event){
     var threadFollowUps= this.state.threadFollowUps

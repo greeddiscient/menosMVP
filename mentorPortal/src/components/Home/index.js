@@ -10,7 +10,9 @@ export default class Home extends Component {
     this.state={
 
       queries: [],
-      queryResponses: []
+      queryResponses: [],
+      followUps: [],
+      followUpResponses:[]
     }
   }
   componentDidMount(){
@@ -21,7 +23,26 @@ export default class Home extends Component {
     else{
       this.setState({loggedIn: true})
       this.getQueries()
+      this.getFollowups()
     }
+  }
+
+  getFollowups(){
+    var that =this
+    axios.get('http://api.lvh.me:9000/followups/'+sessionStorage.getItem('mentorid'), {
+    })
+    .then(function (response) {
+      console.log(response);
+      that.setState({followUps: response.data})
+      var followUpResponses=[]
+      for(var i=0;i<response.data.length;i++){
+        followUpResponses.push('')
+      }
+      that.setState({followUpResponses: followUpResponses})
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   getQueries(){
@@ -71,11 +92,42 @@ export default class Home extends Component {
     });
   }
 
+  replyFollowUp(index,event){
+    event.preventDefault()
+
+    var followUp=this.state.followUps[index]
+    console.log("followupobj", followUp)
+    var mentorid=sessionStorage.getItem('mentorid')
+    var followUpResponse= this.state.followUpResponses[index]
+    var that=this
+    axios.post('http://api.lvh.me:9000/respondfollowup/'+followUp.threadid,
+    {
+      mentor: mentorid,
+      content: followUpResponse,
+      followUp: followUp
+    })
+    .then(function (response) {
+      that.getFollowups()
+      alert("You replied to "+followUp.askedBy.firstName+"\'s followup")
+
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
   responseChange(index,event){
     var queryResponses= this.state.queryResponses
     queryResponses[index]=event.target.value
     this.setState({queryResponses: queryResponses});
   }
+
+  followUpResponseChange(index,event){
+    var followUpResponses= this.state.followUpResponses
+    followUpResponses[index]=event.target.value
+    this.setState({followUpResponses: followUpResponses});
+  }
+
   renderQueries(){
     var queries = this.state.queries
     return(
@@ -96,6 +148,26 @@ export default class Home extends Component {
       </div>
     )
   }
+  renderFollowUps(){
+    var followUps = this.state.followUps
+    return(
+      <div>
+        {followUps.map((followUp,index)=>(
+          <div className= "followUp-content">
+            <h1>Follow Up: {followUp.content}</h1>
+            <h1>Asked by: {followUp.askedBy.firstName}</h1>
+            <form className="followUp-query" onSubmit={this.replyFollowUp.bind(this,index)}>
+              <label>
+                Respond to {followUp.askedBy.firstName}:
+                <input type="text" value={this.state.followUpResponses[index]} onChange={this.followUpResponseChange.bind(this,index)} />
+              </label>
+              <input type="submit" value="Respond" />
+            </form>
+          </div>
+        ))}
+      </div>
+    )
+  }
   render() {
     return (
       <div className="App">
@@ -108,7 +180,10 @@ export default class Home extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div className= "Queries">
-          Your queries: <br/>{this.renderQueries()}
+          Your Queries: <br/>{this.renderQueries()}
+        </div>
+        <div className= "FollowUps">
+          Your Followups: <br/>{this.renderFollowUps()}
         </div>
       </div>
     );

@@ -171,11 +171,6 @@ MongoClient.connect(dburl.url, (err, db) => {
     //   "content": "lets go"
     // }
     var query = req.body
-    query.threadid = new ObjectID(query.threadid)
-    query.askedBy = new ObjectID(query.askedBy)
-    for (var i = 0 ; i < query.mentors.length; i++){
-      query.mentors[i] = new ObjectID(query.mentors[i]);
-    }
     console.log(req.body);
 
     db.collection('followups').insert(query, (err, result) => {
@@ -201,38 +196,38 @@ MongoClient.connect(dburl.url, (err, db) => {
     // }
     const query = {_id: new ObjectID(req.params.threadid)}
     var update =req.body
-    update.mentor = new ObjectID(update.mentor)
     db.collection('threads').update(query,{$push:{responses: req.body}}, (err, item) => {
       if (err) {
         res.send({'error':'An error has occurred'});
       } else {
-        res.send(item);
+        console.log("followupid ="+update.followUp._id)
+        db.collection('followups').remove({"_id": new ObjectID(update.followUp._id)}, (err, result) => {
+          if (err) {
+            res.send({ 'error': 'An error has occurred' });
+          } else {
+            res.send({"Success": "Responded and Removed Followup"});
+            console.log(result);
+          }
+        });
 
       }
     });
-    db.collection('followups').remove({"_id": new ObjectID(update.followUp.id)}, (err, result) => {
-      if (err) {
-        res.send({ 'error': 'An error has occurred' });
-      } else {
-        res.send(result.ops[0]);
-        console.log(result);
-      }
-    });
+
   })
 
   app.get('/followups/:mentorid',(req,res)=>{
     var obj=[];
-    db.collection('followups').find({mentors:{"$in":[new ObjectID(req.params.mentorid)]}}, (err, result) => {
+    db.collection('followups').find({mentors:{"$in":[req.params.mentorid]}}, (err, result) => {
       if (err) {
         res.send({ 'error': 'An error has occurred' });
       } else {
 
         result.each(function(err, docs){
             console.log("item", docs);
-            obj.push(docs);
             if (docs == null){
                 res.send(obj);
             }
+            obj.push(docs);
 
         });
 
