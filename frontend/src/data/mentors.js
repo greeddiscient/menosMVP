@@ -1,18 +1,18 @@
 "use strict";
 
 const mentors = [
+
   {
-    'id': 'jefrey-joe',
-    'name': 'Jefrey Joe',
-    'image': 'jefrey-joe.jpg',
-    'cover': 'jefrey-joe-cover.jpg',
-    'position':'Managing Partner',
-    'company':'Alpha JWC Ventures',
-    'background': 'Jefrey was an active angel investor in early-stage technology startups in Asia and the US, including aCommerce (South East Asia\'s leading e-commerce fulfillment company), Shopline (mobile focused DIY e-commerce store based in HK which was invested by Alibaba), and Vantage Sports (the premier analytics service for NBA players, teams, and media). ',
-    'education':'Masters in Business Administration - UCLA',
+    'id': 'yos-ginting',
+    'name': 'Yos Ginting',
+    'image': 'yos-ginting.jpg',
+    'cover': 'yos-ginting-cover.jpg',
+    'position':'Board Member',
+    'company':'H.M.Sampoerna',
+    'background': 'Yos Adiguna Ginting began his career as manager for strategic alliances at PT Indah Kiat Pulp and Paper. He earned a Ph.D. in theoretical chemistry at the University of Tasmania in Australia in 1997. Mr. Ginting was eventually appointed to the position of vice president for trade alliances based in Singapore. He joined PT Hanjaya Mandala Sampoerna in April 2002, and was named director of human resources in June 2003. In 2008, Mr. Ginting was appointed director in charge of corporate affairs.',
+    'education':'Ph.D in Theoretical Chemisty - University of Tasmania',
     'story':'',
   },
-
 
 
 
@@ -25,6 +25,17 @@ const mentors = [
     'company':'Sankalp Forum',
     'background': 'Sankalp Forum, an initiative of Intellecap, aims to influence the global inclusive development discourse through its work with entrepreneurs, impact investors and inclusive businesses in developing markets. Sankalp Forum was initiated in India in 2009 by Intellecap to create a thriving ecosystem for business-led inclusive development. Over the past seven years, Sankalp has built one of the world\'s largest impact enterprise focused platforms that has supported over 900 social enterprises with connections to over 400 investors, mentors, and business support providers. Over 40 social enterprises recognized by Sankalp have gone on to raise more than USD 120 Mn in funding. Sankalp engages Governments, corporations, influential platforms like the G8 and G20, media and civil society to drive a paradigm shift in inclusive development approaches.',
     'education':'UNSW',
+    'story':'',
+  },
+  {
+    'id': 'jefrey-joe',
+    'name': 'Jefrey Joe',
+    'image': 'jefrey-joe.jpg',
+    'cover': 'jefrey-joe-cover.jpg',
+    'position':'Managing Partner',
+    'company':'Alpha JWC Ventures',
+    'background': 'Jefrey was an active angel investor in early-stage technology startups in Asia and the US, including aCommerce (South East Asia\'s leading e-commerce fulfillment company), Shopline (mobile focused DIY e-commerce store based in HK which was invested by Alibaba), and Vantage Sports (the premier analytics service for NBA players, teams, and media). ',
+    'education':'Masters in Business Administration - UCLA',
     'story':'',
   },
   {
@@ -47,6 +58,17 @@ const mentors = [
     'company':'Blue Bird Group',
     'background': 'Noni Purnomo was groomed as a successor to her father, H. Purnomo Prawiro, president director of this taxi, logistics and property company founded by her grandmother in 1972 with 25 cabs; today it has 26,000.',
     'education':'Industrial Engineering - University of Newcastle Masters in Marketing & Finance - University of San Francisco',
+    'story':'',
+  },
+  {
+    'id': 'novistiar-rustandi',
+    'name': 'Novistiar Rustandi',
+    'image': 'novistiar-rustandi.jpg',
+    'cover': 'novistiar-rustandi-cover.png',
+    'position':'CEO',
+    'company':'HarukaEDU',
+    'background': 'Mr. Novistiar Rustandi is an entrepreneur with a passion for internet startups and digital businesses. Mr. Rustandi has worked in management roles at Price Waterhouse Coopers in the United States as well as Indonesis. He serves as Director at Founder Institute, Incorporated. He earned an undergraduate accounting degree, as well as dual master’s degrees in business administration and information systems development from George Washington University, and is a graduate of the inaugural semester of the Founder Institute in Silicon Valley.',
+    'education':'The George Washington University',
     'story':'',
   },
   {
@@ -93,17 +115,7 @@ const mentors = [
     'education':'Chemical Engineering - University of Southern California MBA - Loyola Marymount University',
     'story':'',
   },
-  {
-    'id': 'novistiar-rustandi',
-    'name': 'Novistiar Rustandi',
-    'image': 'novistiar-rustandi.jpg',
-    'cover': 'novistiar-rustandi-cover.png',
-    'position':'CEO',
-    'company':'HarukaEDU',
-    'background': 'Mr. Novistiar Rustandi is an entrepreneur with a passion for internet startups and digital businesses. Mr. Rustandi has worked in management roles at Price Waterhouse Coopers in the United States as well as Indonesis. He serves as Director at Founder Institute, Incorporated. He earned an undergraduate accounting degree, as well as dual master’s degrees in business administration and information systems development from George Washington University, and is a graduate of the inaugural semester of the Founder Institute in Silicon Valley.',
-    'education':'The George Washington University',
-    'story':'',
-  },
+
   {
     'id': 'aldrin-tando',
     'name': 'Aldrin Tando',

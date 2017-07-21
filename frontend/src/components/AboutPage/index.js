@@ -1,6 +1,8 @@
 
 import React from 'react';
 import NavBar from'../NavBar';
+import './index.css';
+import Footer from '../Footer';
 
 export default class AboutPage extends React.Component {
   constructor(props){
@@ -49,11 +51,10 @@ export default class AboutPage extends React.Component {
   render() {
     return (
 
-      <div className="home">
-      <NavBar/>
-      <h1 onClick={this.testAuth.bind(this)}>TEST AUTHORZIE</h1>
-      <h1 className="about-header-label">About</h1>
       <div className="about">
+      <NavBar/>
+      <h1 className="about-header-label">Vision</h1>
+      <div className="about-menos">
 
         <h1 className="about-believe">We Believe</h1>
         <p className="about-content">At Menos, we believe in the pursuit of excellence and reaching our fullest potential. We want to achieve our goals with integrity.
@@ -68,7 +69,7 @@ This would not be possible without role models that we respect in our lives. We 
               <h2 className= "founder-name">Ivander Tee</h2>
               <h3 className= "founder-education">UC Berkeley &#39;17</h3>
               <h4 className= "founder-degree">B.S. Chemical Engineering</h4>
-              <p className="founder-message"><i className="fa fa-quote-left founder-left-quote" aria-hidden="true"></i>I am where I am toy of connecting you to the right help.<i className="fa fa-quote-right founder-right-quote" aria-hidden="true"></i></p>
+              <p className="founder-message"><i className="fa fa-quote-left founder-left-quote" aria-hidden="true"></i>Following someone means lowering your pride, which sometimes hurts. But slowly, you realize that your life is enriched, perhaps tremendously, by that person. At the end, it’s a trade-off between retaining your pride and getting an enriched life. And in this short little life, the latter always makes more sense to me.<i className="fa fa-quote-right founder-right-quote" aria-hidden="true"></i></p>
             </div>
           </div>
 
@@ -78,7 +79,7 @@ This would not be possible without role models that we respect in our lives. We 
               <h2 className= "founder-name">Abyasa Kamdani</h2>
               <h3 className= "founder-education">UC Berkeley &#39;18</h3>
               <h4 className= "founder-degree">B.A. Economics</h4>
-              <p className="founder-message"><i className="fa fa-quote-left founder-left-quote" aria-hidden="true"></i>rs came in all shapes and foThere were times in my startup or job search that I really needed advice from someone experienced and I have been fortunate enough to find those people. Menos is our way of connecting you to the right help.<i className="fa fa-quote-right founder-right-quote" aria-hidden="true"></i></p>
+              <p className="founder-message"><i className="fa fa-quote-left founder-left-quote" aria-hidden="true"></i>There are many things given to us in this life for the wrong reasons. What we do with such blessings, that is the true test of a man.<i className="fa fa-quote-right founder-right-quote" aria-hidden="true"></i></p>
             </div>
           </div>
           <div className="founder-window-shaun">
@@ -87,11 +88,12 @@ This would not be possible without role models that we respect in our lives. We 
               <h2 className= "founder-name">Shaun Djuhari</h2>
               <h3 className= "founder-education">UC Berkeley &#39;16</h3>
               <h4 className= "founder-degree">B.S. Computer Science</h4>
-              <p className="founder-message"><i className="fa fa-quote-left founder-left-quote" aria-hidden="true"></i>I am where I am today because of those that mentored me along my journey. The mentors came in all shapes and forms - there were some I least expected guidance from. There were times in my startup or job search that I really needed advice from someone experienced and I have been fortunate enough to find those people. Menos is our way of connecting you to the right help.<i className="fa fa-quote-right founder-right-quote" aria-hidden="true"></i></p>
+              <p className="founder-message"><i className="fa fa-quote-left founder-left-quote" aria-hidden="true"></i>Here's to the crazy ones. The misfits. The rebels. The ones who see things differently. You can quote them, disagree with them, glorify or villify them. But the only thing you can't do is ignore them. Because the people who are crazy enough to think they can change the world, are the ones who do.<i className="fa fa-quote-right founder-right-quote" aria-hidden="true"></i></p>
             </div>
           </div>
 
         </div>
+        <Footer/>
       </div>
     );
   }

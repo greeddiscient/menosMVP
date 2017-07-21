@@ -1,28 +1,143 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .home{
-  background-color: #000;
+  background-color: #111;
+  display:relative;
+}
+.splash-container{
+  background-image:url(../../img/achieve-greatnesss.jpg);
+  position:relative;
+  display:block;
+  height:700px;
+  background-size:cover;
+}
+.splash-container h1{
+  text-align:right;
+  position: absolute;
+   bottom: 50px;
+   right: 75px;
+   font-family: 'Roboto',sans-serif;
+   font-weight: 100;
+   font-size:32px;
+   color:#fffafa;
+
+}
+.introduction-header-label{
+  margin-top: 40px;
+  background-color: #003262;
+  color: #FDB515;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  border: 1px solid #fffafa;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  width: 140px;
+  text-align:right;
+  padding-right:7.5px;
+  padding-top:7.5px;
+  padding-bottom:7.5px;
+  font-weight: 300;
+  border-left:none;
+}
+.about-splash{
+  margin:auto;
+  margin-top:40px;
+  width:1100px;
+  display:block;
+  background: #003262;
+  padding:25px;
+  border-radius:20px;
+  border-width: thin;
+  border-color: #fffafa;
+  border-style: solid;
+
+}
+.about-splash-container{
+  margin-top:5px;
+  margin-left:20px;
+  margin-right:20px;
+  display:inline-block;
+  width:500px;
+  float:right;
+}
+.about-splash img {
+  border-radius: 3px;
+  width:500px;
+  display:inline-block;
+}
+.about-splash .menos-title{
+  font-family: 'Open Sans',sans-serif;
+  font-size:34px;
+  color:#FDB515;
+  font-weight: 300;
+  margin-top: 5px;
+}
+.about-splash .menos-intro{
+  margin-top:20px;
+  font-family: 'Roboto',sans-serif;
+  font-size:18px;
+  color:#fffafa;
+  font-weight: 100;
+}
+
+.mentor-about-button{
+  margin-top: 10px;
+  background-color: #003262;
+  border-color: #FDB515;
+  color: #fffafa;
+  border-radius: 20px;
+  font-weight: 300;
+}
+.mentor-about-button:hover{
+  background-color: #003262;
+  border-color: #FDB515;
+  color: #FDB515;
+}
+.mentor-about-button:active{
+  background-color: #003262;
+  border-color: #FDB515;
+  color: #FDB515;
+}
+
+.mentor-splash{
+  text-align:center;
+}
+
+.mentors-header-label{
+  margin-top: 40px;
+  background-color: #003262;
+  color: #FDB515;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  border: 1px solid #fffafa;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  width: 140px;
+  text-align:right;
+  padding-right:7.5px;
+  padding-top:7.5px;
+  padding-bottom:7.5px;
+  font-weight: 300;
+  border-left:none;
+}
+
+.mentor-splash-preview{
+  margin-top:20px;
+}
+.mentor-splash-button{
+  margin-top: 10px;
+  background-color: #003262;
+  border-color: #FDB515;
+  color: #fffafa;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.mentor-splash-button:hover{
+  background-color: #003262;
+  border-color: #FDB515;
+  color: #FDB515;
+}
+.mentor-splash-button:active{
+  background-color: #003262;
+  border-color: #FDB515;
+  color: #FDB515;
 }

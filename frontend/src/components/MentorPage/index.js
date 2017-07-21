@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import NotFoundPage from '../NotFoundPage';
 import mentors from '../../data/mentors';
 import NavBar from'../NavBar';
+import Footer from'../Footer';
 import axios from 'axios';
+import './index.css';
 
 export default class MentorPage extends React.Component {
   constructor(props){
@@ -73,7 +75,12 @@ export default class MentorPage extends React.Component {
       if(JSON.stringify(responseObj.followUp) === JSON.stringify({})){
         rows.push(
           <div className="mentor-response">
-            <h1>{responseObj.mentor} responded: {responseObj.content}</h1>
+            <div className="responded-by">
+              {responseObj.mentor} responded:
+            </div>
+            <div className="response-content">
+              {responseObj.content}
+            </div>
           </div>
         )
       }
@@ -87,24 +94,68 @@ export default class MentorPage extends React.Component {
   renderThreads(){
     var threads = this.state.threads
     console.log("threads",threads)
-    return(
-      <div>
-        {threads.map((thread,index)=>(
+    if (threads.length ===0){
+      return(
+        <div className="threads">
           <div className= "thread-content">
-            <h1>Query: {thread.query.content}</h1>
-            <h1>Asked by: {thread.query.askedBy.firstName}</h1>
-            {this.renderMentorResponses(thread)}
-            <form className="followup-thread" onSubmit={this.submitFollowUpThread.bind(this,index)}>
-              <label>
-                Ask a followup to {this.state.mentor.name}:
-                <input type="text" value={this.state.threadFollowUps[index]} onChange={this.followUpChange.bind(this,index)} />
-              </label>
-              <input type="submit" value="Followup" />
-            </form>
+            <div className= "thread-asked-by">
+              Shaun Djuhari asked:
+            </div>
+            <div className= "thread-question">
+              Hello Boss How are you
+            </div>
+            <div className="mentor-response">
+              <div className="responded-by">
+                Mentor responded:
+              </div>
+              <div className="response-content">
+                Hello Bro how are you too
+              </div>
+            </div>
+            <div className="question-form">
+              <form>
+                <label className="question-invitation">
+                  Followup to this Thread:
+                  <textarea rows="5" cols="30" className="question-box" type="text"></textarea>
+                </label>
+                <input className="question-submit" type="submit" value="Ask a Followup" />
+              </form>
+            </div>
           </div>
-        ))}
-      </div>
-    )
+        </div>
+      )
+      // return(
+      //   <div className="profile-content">
+      //     {this.state.mentor.name} has not answered any questions.
+      //   </div>
+      // )
+    }
+    // {threads.map((thread,index)=>(
+    //   <div className= "thread-content">
+    //     <div className= "thread-asked-by">
+    //       {thread.query.askedBy.firstName} asked:
+    //     </div>
+    //     <div className= "thread-question">
+    //       {thread.query.content}
+    //     </div>
+    //     {this.renderMentorResponses(thread)}
+    //     <form className="followup-thread" onSubmit={this.submitFollowUpThread.bind(this,index)}>
+    //       <label>
+    //         Ask a followup to {this.state.mentor.name}:
+    //         <textarea rows="5" cols="30" className="question-box" type="text" value={this.state.threadFollowUps[index]} onChange={this.followUpChange.bind(this)}></textarea>
+    //       </label>
+    //       <input type="submit" value="Followup" />
+    //     </form>
+    //   </div>
+    // ))}
+    else{
+      return(
+        <div>
+
+        </div>
+      )
+    }
+
   }
   submitFollowUpThread(index,event){
     var mentor= this.state.mentor
@@ -276,20 +327,12 @@ export default class MentorPage extends React.Component {
     return (
 
 
-      <div className="athlete-full">
+      <div className="mentor-full">
+        {this.renderDirectionalButtons(index)}
         <NavBar/>
-        <Link to="/mentors">
-          <h1 className="navigateBack">
-            « Back to Mentors
-          </h1>
-        </Link>
         <div className="mentor-profile-container">
-          {this.renderDirectionalButtons(index)}
-          <div className="athlete">
 
-
-
-
+          <div className="mentor">
             <div className= "mentor-header">
               <img className= "mentor-cover" src={require(`../../img/${mentor.cover}`)}/>
               <img className= "mentor-photo"  src={require(`../../img/${mentor.image}`)}/>
@@ -299,8 +342,6 @@ export default class MentorPage extends React.Component {
                   <h3 className="position">{mentor.position} of {mentor.company}</h3>
                 </div>
               </div>
-
-
             </div>
 
 
@@ -319,21 +360,17 @@ export default class MentorPage extends React.Component {
                 {mentor.background}
               </div>
               <h1 className="profile-label">
-                Story
-              </h1>
-              <div className="story profile-content">
-                {mentor.story}
-              </div>
-              <h1 className="profile-label">
                 Ask Me Anything (AMA)
               </h1>
-              <form onSubmit={this.submitQuestion.bind(this)}>
-                <label>
-                  Ask {mentor.name} Anything:
-                  <input type="text" value={this.state.question} onChange={this.questionChange.bind(this)} />
-                </label>
-                <input type="submit" value="Ask" />
-              </form>
+              <div className="question-form">
+                <form onSubmit={this.submitQuestion.bind(this)}>
+                  <label className="question-invitation">
+                    Dear {this.state.mentor.name},
+                    <textarea rows="10" cols="30" className="question-box" type="text" value={this.state.question} onChange={this.questionChange.bind(this)}></textarea>
+                  </label>
+                  <input className="question-submit" type="submit" value="Submit Question" />
+                </form>
+              </div>
               <h1 className="profile-label">
                 Threads
               </h1>
@@ -344,14 +381,8 @@ export default class MentorPage extends React.Component {
 
 
         </div>
-
+        <Footer/>
       </div>
     );
   }
 }
-// <section className="medals">
-//   <p>Winner of <strong>{athlete.medals.length}</strong> medals:</p>
-//   <ul>{
-//     athlete.medals.map((medal, i) => <Medal key={i} {...medal}/>)
-//   }</ul>
-// </section>

@@ -1,28 +1,57 @@
-.App {
-  text-align: center;
+
+.navbar{
+  margin-bottom:0px;
+}
+.navbar-inverse{
+  background-color: #111;
+  border:none;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+.navbar-inverse .navbar-nav > li > a {
+    text-decoration: none;
+    color:#fffafa;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size:18px;
+    font-weight: 300;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.navbar-inverse .navbar-nav > li > a:hover {
+    color:#FDB515;
+}
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus{
+  color:#FDB515;
+  background-color:#003262;
 }
 
-.App-intro {
-  font-size: large;
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-brand:focus,
+.navbar-inverse .navbar-brand:hover {
+    text-decoration: none;
+    color:#73af59;
+
+    font-family: 'Roboto', sans-serif;
+    font-size:17px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.lilogin{
+  width:170px;
+  padding:10px;
+  cursor:pointer;
+}
+.login{
+  margin: auto 0 auto 0;
+  color: #FDB515;
 }
 
-.home{
-  background-color: #000;
+.loggedin{
+  font-family: 'Roboto', sans-serif;
+  font-size:17px;
+  height:50px;
+  padding: 12px 0px 12px 0px;
+  cursor:pointer;
+  font-weight:100;
 }

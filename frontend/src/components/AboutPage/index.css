@@ -1,28 +1,185 @@
-.App {
-  text-align: center;
+.about{
+  background-color: #111;
+  position:relative;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.about-header-label{
+  margin-top: 40px;
+  background-color: #003262;
+  color: #FDB515;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  border: 1px solid #fffafa;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  width: 140px;
+  text-align:right;
+  padding-right:7.5px;
+  padding-top:7.5px;
+  padding-bottom:7.5px;
+  font-weight: 300;
+  border-left:none;
+}
+.about-menos{
+  background-color: #003262;
+  border: 1px solid #fffafa;
+  border-radius: 10px;
+  width: 75%;
+  margin:auto;
+  margin-top:40px;
+  padding: 20px 20px 20px 20px;
+}
+.about-believe{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  color: #FDB515;
+  margin-top:0px;
+  margin-bottom:20px;
+  font-weight:300;
+}
+.about-content{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  margin:0;
+  color:#fffafa;
+  line-height: 1.5;
+}
+.founders-header-label{
+  margin-top: 40px;
+  background-color: #003262;
+  color: #FDB515;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  border: 1px solid #fffafa;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  width: 140px;
+  text-align:right;
+  padding-right:7.5px;
+  padding-top:7.5px;
+  padding-bottom:7.5px;
+  border-left:none;
+}
+.founders{
+  height:800px;
+  margin:auto;
+  margin-top:40px;
+  width:1100px;
+  text-align:center;
+  position:relative;
+
+}
+.founder-window-ivander{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left:0;
+  display:inline-block;
+  width:300px;
+
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  padding: 0;
+  background:#003262;
+  border-radius:20px;
+}
+.founder-window-abyasa{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top:0;
+  left: 0;
+  right: 0;
+  display:inline-block;
+  width:300px;
+
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  padding: 0;
+  background:#003262;
+  border-radius:20px;
+}
+.founder-window-shaun{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top:0;
+  right: 0;
+  display:inline-block;
+  width:300px;
+
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  padding: 0;
+  background:#003262;
+  border-radius:20px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.founders img{
+  margin: 0;
+  width: 300px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-.App-intro {
-  font-size: large;
+.founders .founder-details{
+  background:#003262;
+  width:100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.founders .founder-details .founder-name{
+  font-family: 'Open Sans', sans-serif;
+  color: #fffafa;
+  font-size:22px;
+  padding: 10px 10px 2.5px 10px;
+  margin-bottom:5px;
+  margin-top:0;
+  background-color:#003262;
+  font-weight: 300;
 }
+.founders .founder-details .founder-education{
+  font-family: 'Open Sans', sans-serif;
+  color: #FDB515;
+  font-size:18px;
+  padding: 2.5px 10px 2.5px 10px;
+  background-color:#003262;
+  margin: 0;
+  font-weight: 300;
+}
+.founders .founder-details .founder-degree{
+  font-family: 'Open Sans', sans-serif;
+  color: #FDB515;
+  font-size:18px;
+  padding: 2.5px 10px 2.5px 10px;
+  background-color:#003262;
+  margin: 0;
+}
+.founders .founder-details .founder-message{
+  margin-top:5px;
+  text-align:center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  padding: 2.5px 20px 15px 20px;
+  color:#fffafa;
+  font-size:16px;
+  background-color:#003262;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  line-height:1.75;
+}
+.founders .founder-details .founder-left-quote{
+  color:#fffafa;
+  font-size:14px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.founders .founder-details .founder-right-quote{
+  color:#fffafa;
+  font-size:14px;
+  padding-left:10px;
+  padding-right:10px;
 
-.home{
-  background-color: #000;
 }
