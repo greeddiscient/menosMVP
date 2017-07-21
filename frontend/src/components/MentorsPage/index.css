@@ -1,7 +1,7 @@
 .mentors-page{
   background-color: #111;
   text-align:center;
-  display: relative;
+  position: relative;
 }
 .mentors-header-label{
   margin-top: 40px;

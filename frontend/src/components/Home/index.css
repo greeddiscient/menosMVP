@@ -1,6 +1,6 @@
 .home{
   background-color: #111;
-  display:relative;
+  position:relative;
 }
 .splash-container{
   background-image:url(../../img/achieve-greatnesss.jpg);
