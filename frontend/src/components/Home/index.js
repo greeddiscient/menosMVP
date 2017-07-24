@@ -38,7 +38,7 @@ class Home extends Component {
           Introduction
         </h1>
         <div className="about-splash">
-          <img src={require('../../img/about-mentor.png')}/>
+          <img className="splash-img" src={require('../../img/about-mentor.png')}/>
           <div className= "about-splash-container">
             <h1 className="menos-title">Mentorship to Optimize Society</h1>
             <p className="menos-intro">The pursuit of excellence can be demoralizing. At times, we feel lost - we don&#39;t know what to do or where to go. We need someone to point us in the right direction.<br/><br/>Menos connects you with highly established individuals that will guide you through your journey. Our mentors will give you solid advice based on their years and years of running successful companies.</p>
