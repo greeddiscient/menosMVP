@@ -89,9 +89,9 @@ export default class NavBar extends React.Component {
       <div>
       <Navbar inverse>
         <Navbar.Header>
-          <Navbar.Brand>
-            <Link to='/' className='navbar-brand'><img className="menos-hor-logo" src={require('../../img/menos-hor-logo.png')}></img></Link>
-          </Navbar.Brand>
+          <Nav pullLeft className='navbar-brand'>
+            <Link to='/'><img src={require('../../img/menos-hor-logo.png')}></img>
+          </Navb>
         </Navbar.Header>
         <Nav activeKey={this.state.activeKey} onSelect={this.handleSelect.bind(this)}>
           <IndexLinkContainer to="/">
