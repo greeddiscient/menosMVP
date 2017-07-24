@@ -90,7 +90,7 @@ export default class NavBar extends React.Component {
       <Navbar inverse>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to='/' className='navbar-brand'>menos</Link>
+            <Link to='/' className='navbar-brand'><img className="menos-hor-logo" src={require('../../img/menos-hor-logo.png')}></img></Link>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav activeKey={this.state.activeKey} onSelect={this.handleSelect.bind(this)}>
