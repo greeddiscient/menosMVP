@@ -93,65 +93,45 @@ export default class MentorPage extends React.Component {
 
   renderThreads(){
     var threads = this.state.threads
-    console.log("threads",threads)
     if (threads.length ===0){
       return(
-        <div className="threads">
-          <div className= "thread-content">
-            <div className= "thread-asked-by">
-              Shaun Djuhari asked:
-            </div>
-            <div className= "thread-question">
-              Hello Boss How are you
-            </div>
-            <div className="mentor-response">
-              <div className="responded-by">
-                Mentor responded:
-              </div>
-              <div className="response-content">
-                Hello Bro how are you too
-              </div>
-            </div>
-            <div className="question-form">
-              <form>
-                <label className="question-invitation">
-                  Followup to this Thread:
-                  <textarea rows="5" cols="30" className="question-box" type="text"></textarea>
-                </label>
-                <input className="question-submit" type="submit" value="Ask a Followup" />
-              </form>
-            </div>
+          <div className="profile-content">
+            {this.state.mentor.name} has not answered any questions.
           </div>
-        </div>
-      )
-      // return(
-      //   <div className="profile-content">
-      //     {this.state.mentor.name} has not answered any questions.
-      //   </div>
-      // )
+        )
     }
-    // {threads.map((thread,index)=>(
-    //   <div className= "thread-content">
-    //     <div className= "thread-asked-by">
-    //       {thread.query.askedBy.firstName} asked:
-    //     </div>
-    //     <div className= "thread-question">
-    //       {thread.query.content}
-    //     </div>
-    //     {this.renderMentorResponses(thread)}
-    //     <form className="followup-thread" onSubmit={this.submitFollowUpThread.bind(this,index)}>
-    //       <label>
-    //         Ask a followup to {this.state.mentor.name}:
-    //         <textarea rows="5" cols="30" className="question-box" type="text" value={this.state.threadFollowUps[index]} onChange={this.followUpChange.bind(this)}></textarea>
-    //       </label>
-    //       <input type="submit" value="Followup" />
-    //     </form>
-    //   </div>
-    // ))}
     else{
       return(
         <div>
-
+        {threads.map((thread,index)=>(
+          <div className="threads">
+            <div className= "thread-content">
+              <div className= "thread-asked-by">
+                {thread.query.askedBy.firstName} asked:
+              </div>
+              <div className= "thread-question">
+                {thread.query.content}
+              </div>
+              <div className="mentor-response">
+                <div className="responded-by">
+                  Mentor responded:
+                </div>
+                <div className="response-content">
+                  Hello Bro how are you too
+                </div>
+              </div>
+              <div className="question-form">
+                <form onSubmit={this.submitFollowUpThread.bind(this,index)}>
+                  <label className="question-invitation">
+                    Followup to this Thread:
+                    <textarea rows="5" cols="30" className="question-box" type="text" value={this.state.threadFollowUps[index]} onChange={this.followUpChange.bind(this)}></textarea>
+                  </label>
+                  <input className="question-submit" type="submit" value="Ask a Followup" />
+                </form>
+              </div>
+            </div>
+          </div>
+        ))}
         </div>
       )
     }
