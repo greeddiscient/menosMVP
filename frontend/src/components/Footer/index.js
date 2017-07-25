@@ -12,7 +12,7 @@ export default class Footer extends React.Component {
     return (
       <div className="footer">
         <div className="contact-us">
-          Reach Out to us Anytime:
+          Reach Out Anytime:
         </div>
         <div className="email">
           support@menos.id

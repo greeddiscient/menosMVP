@@ -12,9 +12,9 @@ var app =express()
 // .use(vhost('lvh.me', frontendApp.app))
 
 //prod
-app.use(vhost('api.menos-mvp.herokuapp.com', apiApp.app))
-.use(vhost('mentors.menos-mvp.herokuapp.com', mentorsApp.app))
-.use(vhost('menos-mvp.herokuapp.com', frontendApp.app))
+app.use(vhost('api.menos.id', apiApp.app))
+.use(vhost('mentors.menos.id', mentorsApp.app))
+.use(vhost('menos.id', frontendApp.app))
 
 const PORT = process.env.PORT || 9000;
 
