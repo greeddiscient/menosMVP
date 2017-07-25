@@ -17,8 +17,9 @@
   padding-right:7.5px;
   padding-top:7.5px;
   padding-bottom:7.5px;
-  font-weight: 300;
+  font-weight: 700;
   border-left:none;
+  letter-spacing: 2px;
 }
 .about-menos{
   background-color: #003262;
@@ -35,7 +36,7 @@
   color: #FDB515;
   margin-top:0px;
   margin-bottom:20px;
-  font-weight:300;
+  font-weight:700;
   letter-spacing:2px;
 }
 .about-content{
@@ -51,7 +52,7 @@
   background-color: #003262;
   color: #FDB515;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 700;
   font-size: 20px;
   border: 1px solid #fffafa;
   border-top-right-radius: 2px;
@@ -62,6 +63,8 @@
   padding-top:7.5px;
   padding-bottom:7.5px;
   border-left:none;
+  letter-spacing: 2px;
+  
 }
 .founders{
   height:800px;
@@ -139,7 +142,7 @@
   margin-bottom:5px;
   margin-top:0;
   background-color:#003262;
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: 2px;
 }
 .founders .founder-details .founder-education{

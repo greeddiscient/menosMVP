@@ -110,9 +110,10 @@
   margin:0;
   margin-bottom:10px;
   width: auto;
-  font-family: 'Open-Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #fffafa;
-  font-weight: 300;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 .position {
   position:relative;
@@ -139,8 +140,9 @@
   border-radius:5px;
   text-decoration: underline;
   color:#333;
-  font-family:'Open-Sans',sans-serif;
+  font-family:'Open Sans',sans-serif;
   font-weight: 300;
+  letter-spacing: 2px;
 }
 .profile-label{
   color: #fffafa;
@@ -150,7 +152,8 @@
   font-family: 'Open Sans', sans-serif;
   font-size:18px;
   display:inline-block;
-  font-weight: 300;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .profile-content{
@@ -245,7 +248,7 @@
 }
 
 .thread-asked-by{
-  font-family: 'Open-Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #fffafa;
   font-weight: 300;
   font-size:18px;
@@ -260,7 +263,7 @@
 }
 
 .responded-by{
-  font-family: 'Open-Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #fffafa;
   font-weight: 300;
   font-size:18px;

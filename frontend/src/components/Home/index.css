@@ -34,8 +34,9 @@
   padding-right:7.5px;
   padding-top:7.5px;
   padding-bottom:7.5px;
-  font-weight: 300;
+  font-weight: 700;
   border-left:none;
+  letter-spacing: 2px;
 }
 .about-splash{
   margin:auto;
@@ -66,7 +67,7 @@
   font-family: 'Open Sans',sans-serif;
   font-size:34px;
   color:#FDB515;
-  font-weight: 300;
+  font-weight: 700;
   margin-top: 5px;
   letter-spacing: 2px;
 }
@@ -115,8 +116,9 @@
   padding-right:7.5px;
   padding-top:7.5px;
   padding-bottom:7.5px;
-  font-weight: 300;
+  font-weight: 700;
   border-left:none;
+  letter-spacing: 2px;
 }
 
 .mentor-splash-preview{

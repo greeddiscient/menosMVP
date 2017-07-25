@@ -8,19 +8,21 @@
   text-align: center;
 }
 .footer .contact-us{
-  font-family: 'Open-Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #fffafa;
   font-weight: 300;
   font-size:18px;
   display:inline;
+
 }
 .footer .email{
   margin-left:10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #FDB515;
-  font-weight: 300;
+  font-weight: 700;
   font-style:italic;
   text-decoration: underline;
   font-size:18px;
   display:inline;
+  letter-spacing: 2px;
 }
