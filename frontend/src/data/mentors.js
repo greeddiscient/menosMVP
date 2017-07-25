@@ -53,8 +53,8 @@ const mentors = [
   {
     'id': 'sukan-makmuri',
     'name': 'Sukan Makmuri',
-    'image': 'jefrey-joe.jpg',
-    'cover': 'jefrey-joe-cover.jpg',
+    'image': 'sukan-makmuri.jpg',
+    'cover': 'sukan-makmuri-cover.png',
     'position':'CTO',
     'company':'Kudo',
     'background': 'For over 20 years Sukan Makmuri honed his business, product management, finance, and technology skills in several startups in Silicon Valley, as a senior consultant to major corporations, and as Vice President of Internet Banking Technology at Bank of America. In the last few years, numerous startups & incubators in Silicon Valley and SE Asia has also benefited from his strategic and detailed mentoring.',
@@ -64,8 +64,8 @@ const mentors = [
   {
     'id': 'pahala-mansury',
     'name': 'Pahala Mansury',
-    'image': 'jefrey-joe.jpg',
-    'cover': 'jefrey-joe-cover.jpg',
+    'image': 'pahala-mansury.jpg',
+    'cover': 'pahala-mansury-cover.jpg',
     'position':'President Director',
     'company':'Garuda Indonesia',
     'background': 'Pahala Mansury served as the Managing Director of Finance & Strategy at Bank Mandiri and was awarded The Best CFO in Indonesia. He currently serves as the President and Director of Garuda Indonesia, Indonesia\'s flagship airlines. Pahala Mansury holds a Bachelors Degree in Accounting from University of Indonesia and then went on to a prestigious finance program at New York University Stern School of Business where he holds a Masters of Business Administration.',
