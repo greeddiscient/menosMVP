@@ -36,10 +36,9 @@
 .mentors-introduction .header{
   font-family: 'Open Sans', sans-serif;
   font-size: 34px;
-  font-weight: 700;
+  font-weight: 300;
   color: #FDB515;
   margin-bottom:10px;
-    letter-spacing:2px;
 }
 .mentors-introduction .content{
   font-family: 'Roboto', sans-serif;
