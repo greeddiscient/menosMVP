@@ -36,6 +36,7 @@
   margin-top:0px;
   margin-bottom:20px;
   font-weight:300;
+  letter-spacing:2px;
 }
 .about-content{
   font-family: 'Roboto', sans-serif;
@@ -139,6 +140,7 @@
   margin-top:0;
   background-color:#003262;
   font-weight: 300;
+  letter-spacing: 2px;
 }
 .founders .founder-details .founder-education{
   font-family: 'Open Sans', sans-serif;
@@ -147,7 +149,7 @@
   padding: 2.5px 10px 2.5px 10px;
   background-color:#003262;
   margin: 0;
-  font-weight: 300;
+  font-weight: 100;
 }
 .founders .founder-details .founder-degree{
   font-family: 'Open Sans', sans-serif;
@@ -156,6 +158,7 @@
   padding: 2.5px 10px 2.5px 10px;
   background-color:#003262;
   margin: 0;
+  font-weight: 100;
 }
 .founders .founder-details .founder-message{
   margin-top:5px;
@@ -168,7 +171,7 @@
   background-color:#003262;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  line-height:1.75;
+  line-height:1.3;
 }
 .founders .founder-details .founder-left-quote{
   color:#fffafa;

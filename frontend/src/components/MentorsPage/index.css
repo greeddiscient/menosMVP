@@ -1,6 +1,6 @@
 .mentors-page{
   background-color: #111;
-  text-align:center;
+
   position: relative;
 }
 .mentors-header-label{
@@ -29,6 +29,7 @@
   width:75%;
   margin: auto;
   margin-top:50px;
+  text-align:center;
 }
 
 .mentors-introduction .header{
@@ -37,6 +38,7 @@
   font-weight: 300;
   color: #FDB515;
   margin-bottom:10px;
+    letter-spacing:2px;
 }
 .mentors-introduction .content{
   font-family: 'Roboto', sans-serif;

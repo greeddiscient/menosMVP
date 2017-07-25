@@ -3,6 +3,7 @@ import MentorPreview from '../MentorPreview';
 import mentors from '../../data/mentors';
 import NavBar from'../NavBar';
 import Footer from '../Footer';
+import Header from '../Header';
 import {Link} from 'react-router-dom'
 import {LinkContainer} from 'react-router-bootstrap'
 import './index.css';
@@ -38,14 +39,14 @@ class Home extends Component {
           Introduction
         </h1>
         <div className="about-splash">
-          <img className="splash-img" src={require('../../img/about-mentor.png')}/>
+          <img className="splash-img" src={require('../../img/menos-sq-logo.png')}/>
           <div className= "about-splash-container">
             <h1 className="menos-title">Mentorship to Optimize Society</h1>
             <p className="menos-intro">The pursuit of excellence can be demoralizing. At times, we feel lost - we don&#39;t know what to do or where to go. We need someone to point us in the right direction.<br/><br/>Menos connects you with highly established individuals that will guide you through your journey. Our mentors will give you solid advice based on their years and years of running successful companies.</p>
             <Link to= '/mentors'>
               <button className="btn-default btn-lg mentor-about-button">View All Mentors</button>
             </Link>
-        </div>
+          </div>
         </div>
 
         <div className="mentor-splash">

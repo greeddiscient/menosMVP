@@ -1,0 +1,12 @@
+.header-logo{
+  background-color:#003262;
+  width:100%;
+  text-align: center;
+  height: 100%;
+}
+
+.header-logo .menos-sq-logo{
+  width: 33%;
+  height: 33%;
+  vertical-align: middle;
+}
