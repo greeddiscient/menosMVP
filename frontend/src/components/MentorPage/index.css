@@ -112,8 +112,8 @@
   width: auto;
   font-family: 'Open Sans', sans-serif;
   color: #fffafa;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 .position {
   position:relative;
