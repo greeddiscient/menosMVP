@@ -26,9 +26,6 @@
   color: #FDB515;
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
-  border: 1px solid #fffafa;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
   width: 140px;
   text-align:right;
   padding-right:7.5px;
@@ -45,10 +42,6 @@
   display:table;
   background: #003262;
   padding:20px;
-  border-radius:20px;
-  border-width: thin;
-  border-color: #fffafa;
-  border-style: solid;
 
 }
 .about-splash-container{
@@ -82,7 +75,7 @@
   background-color: #003262;
   border-color: #FDB515;
   color: #fffafa;
-  border-radius: 20px;
+  border-radius: 10px;
   font-weight: 300;
 }
 .mentor-about-button:hover{
@@ -106,9 +99,6 @@
   color: #FDB515;
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
-  border: 1px solid #fffafa;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
   width: 140px;
   text-align:right;
   padding-right:7.5px;
@@ -126,7 +116,7 @@
   background-color: #003262;
   border-color: #FDB515;
   color: #fffafa;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 60px;
   font-weight: 300;
 }

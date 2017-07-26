@@ -9,9 +9,6 @@
   color: #FDB515;
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
-  border: 1px solid #fffafa;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
   width: 140px;
   text-align:right;
   padding-right:7.5px;
@@ -22,8 +19,6 @@
 }
 .about-menos{
   background-color: #003262;
-  border: 1px solid #fffafa;
-  border-radius: 10px;
   width: 75%;
   margin:auto;
   margin-top:40px;
@@ -52,9 +47,6 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 20px;
-  border: 1px solid #fffafa;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
   width: 140px;
   text-align:right;
   padding-right:7.5px;
@@ -80,11 +72,10 @@
   display:inline-block;
   width:300px;
 
-  border: 1px solid #ccc;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   padding: 0;
   background:#003262;
-  border-radius:20px;
+  border-radius:10px;
 }
 .founder-window-abyasa{
   position: absolute;
@@ -96,11 +87,10 @@
   display:inline-block;
   width:300px;
 
-  border: 1px solid #ccc;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   padding: 0;
   background:#003262;
-  border-radius:20px;
+  border-radius:10px;
 }
 .founder-window-shaun{
   position: absolute;
@@ -110,26 +100,24 @@
   right: 0;
   display:inline-block;
   width:300px;
-
-  border: 1px solid #ccc;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   padding: 0;
   background:#003262;
-  border-radius:20px;
+  border-radius:10px;
 }
 
 .founders img{
   margin: 0;
   width: 300px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .founders .founder-details{
   background:#003262;
   width:100%;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .founders .founder-details .founder-name{
   font-family: 'Open Sans', sans-serif;
