@@ -71,8 +71,9 @@
   background-color: #fff;
 }
 .mentor-header-container{
-  width:75%;
+  width:85%;
   position:relative;
+  margin:auto;
 }
 .mentor-name-position-container{
   display:inline-block;
