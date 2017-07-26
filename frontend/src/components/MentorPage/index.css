@@ -15,7 +15,6 @@
   margin: auto;
   margin-bottom:40px;
   margin-top:40px;
-  border: 1px solid #fffafa;
   background-color: #003262;
 }
 .directional-buttons{
@@ -79,7 +78,6 @@
   display:inline-block;
   position:relative;
   background-color: #111;
-  border: 1px solid #fffafa;
   width:100%;
 
 }

@@ -7,14 +7,14 @@
   margin-top: 40px;
   background-color: #003262;
   color: #FDB515;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 20px;
   width: 140px;
   text-align:right;
   padding-right:7.5px;
   padding-top:7.5px;
   padding-bottom:7.5px;
-  font-weight: 300;
+  font-weight: 700;
   border-left:none;
   letter-spacing: 2px;
 }
@@ -31,16 +31,16 @@
 }
 
 .mentors-introduction .header{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 34px;
-  font-weight: 300;
+  font-weight: 700;
   color: #FDB515;
   margin-bottom:10px;
 }
 .mentors-introduction .content{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 400;
   color: #fffafa;
   line-height: 2.5;
 }
