@@ -15,6 +15,7 @@ var app =express()
 app.use(vhost('api.menos.id', apiApp.app))
 .use(vhost('mentors.menos.id', mentorsApp.app))
 .use(vhost('menos.id', frontendApp.app))
+.use(vhost('www.menos.id', frontendApp.app))
 
 const PORT = process.env.PORT || 9000;
 
