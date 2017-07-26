@@ -314,8 +314,11 @@ export default class MentorPage extends React.Component {
 
           <div className="mentor">
             <div className= "mentor-header">
-              <img className= "mentor-cover" src={require(`../../img/${mentor.cover}`)}/>
-              <img className= "mentor-photo"  src={require(`../../img/${mentor.image}`)}/>
+              <div className= "mentor-header-container">
+                <img className= "mentor-cover" src={require(`../../img/${mentor.cover}`)}/>
+                <img className= "mentor-photo"  src={require(`../../img/${mentor.image}`)}/>
+              </div>
+
             </div>
             <div className="mentor-name-position-container">
               <div className="mentor-name-position">
