@@ -65,9 +65,14 @@
   color:#FDB515;
 }
 .mentor-header {
+  position:relative;
   width: 100%;
   padding: 10px;
   background-color: #fff;
+}
+.mentor-header-container{
+  width:75%;
+  position:relative;
 }
 .mentor-name-position-container{
   display:inline-block;
