@@ -145,7 +145,7 @@ const mentors = [
     'cover': 'derice-sumantri-cover.jpg',
     'position':'Head of Healthcare',
     'company':'Royal Progress',
-    'background': 'Progress Group is a family owned company in real estate township development, healthcare, agriculture, outdoor advertising and petrol industry that began in Wollongong and Sydney Australia in 1978 and expanded into Indonesia in 1982. Derice Sumantri is an avid soccer fan. Not only does she keep up to date with the latest soccer news, she was also a Division I player in college. Derice Sumantri believes that the strategy, skill, mindset, and teamwork in athletics transfers over to the workplace.',
+    'background': 'Progress Group is a family owned company in real estate township development, healthcare, agriculture, outdoor advertising and petrol industry that began in Wollongong and Sydney Australia in 1978 and expanded into Indonesia in 1982. Derice Sumantri is an avid soccer fan. Not only does she keep up to date with the latest soccer news, she was also a Division I player in college. Derice Sumantri believes that the strategy, skill, mindseti t, and teamwork in athletics transfers over to the workplace.',
     'education':'Bachelor of Commerce - University of Sydney',
     'story':'',
   },
