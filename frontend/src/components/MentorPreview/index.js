@@ -10,8 +10,7 @@ export default class MentorPreview extends React.Component {
           <img src={require(`../../img/${this.props.image}`)}/>
           <div className="mentor-info">
             <h2 className="name">{this.props.name}</h2>
-            <h3 className="company">{this.props.company}</h3>
-            <h3 className="position">{this.props.position}</h3>
+            <h3 className="company">{this.props.position} of {this.props.company}</h3>
 
           </div>
 
