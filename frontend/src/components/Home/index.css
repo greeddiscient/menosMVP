@@ -59,8 +59,9 @@
   font-family: 'PT Sans',sans-serif;
   font-size:34px;
   color:#FDB515;
-  font-weight: 700;
+  font-weight: 400;
   margin-top: 5px;
+  letter-spacing: 1.5px;
 }
 .about-splash .menos-intro{
   margin-top:20px;
@@ -76,7 +77,8 @@
   border-color: #FDB515;
   color: #fffafa;
   border-radius: 10px;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: 1.5px;
 }
 .mentor-about-button:hover{
   background-color: #003262;
@@ -104,8 +106,9 @@
   padding-right:7.5px;
   padding-top:7.5px;
   padding-bottom:7.5px;
-  font-weight: 700;
+  font-weight: 400;
   border-left:none;
+  letter-spacing: 1.5px;
 }
 
 .mentor-splash-preview{
@@ -118,7 +121,8 @@
   color: #fffafa;
   border-radius: 10px;
   margin-bottom: 60px;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: 1.5px;
 }
 .mentor-splash-button:hover{
   background-color: #003262;

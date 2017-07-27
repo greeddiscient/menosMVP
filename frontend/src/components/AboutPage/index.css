@@ -14,7 +14,8 @@
   padding-right:7.5px;
   padding-top:7.5px;
   padding-bottom:7.5px;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: 1.5px;
   border-left:none;
 }
 .about-menos{
@@ -46,7 +47,7 @@
   background-color: #003262;
   color: #FDB515;
   font-family: 'PT Sans', sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 20px;
   width: 140px;
   text-align:right;
@@ -54,6 +55,7 @@
   padding-top:7.5px;
   padding-bottom:7.5px;
   border-left:none;
+  letter-spacing: 1.5px;
 
 }
 .founders{
@@ -128,7 +130,7 @@
   margin-bottom:5px;
   margin-top:0;
   background-color:#003262;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 1.5px;
 }
 .founders .founder-details .founder-education{

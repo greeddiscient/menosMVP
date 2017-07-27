@@ -14,9 +14,9 @@
   padding-right:7.5px;
   padding-top:7.5px;
   padding-bottom:7.5px;
-  font-weight: 700;
+  font-weight: 400;
   border-left:none;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
 .mentors-introduction{
@@ -33,7 +33,8 @@
 .mentors-introduction .header{
   font-family: 'PT Sans', sans-serif;
   font-size: 34px;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: 1.5px;
   color: #FDB515;
   margin-bottom:10px;
 }
