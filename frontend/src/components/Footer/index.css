@@ -10,7 +10,7 @@
 .footer .contact-us{
   font-family: 'Khula', sans-serif;
   color: #fffafa;
-  font-weight: 400;
+  font-weight: 300;
   font-size:18px;
   display:inline;
 
@@ -20,7 +20,7 @@
   font-family: 'Khula', sans-serif;
   color: #FDB515;
   font-weight: 400;
-  letter-spacing: 1.5;
+  letter-spacing: 1.25px;
   font-style:italic;
   text-decoration: underline;
   font-size:18px;
@@ -32,6 +32,6 @@
   display: block;
   font-family: 'Khula', sans-serif;
   color: #fffafa;
-  font-weight: 400;
+  font-weight: 300;
   font-size:18px;
 }

@@ -61,14 +61,14 @@
   color:#FDB515;
   font-weight: 400;
   margin-top: 5px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.25px;
 }
 .about-splash .menos-intro{
   margin-top:20px;
   font-family: 'Khula',sans-serif;
   font-size:18px;
   color:#fffafa;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .mentor-about-button{
@@ -78,7 +78,7 @@
   color: #fffafa;
   border-radius: 10px;
   font-weight: 400;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.25px;
 }
 .mentor-about-button:hover{
   background-color: #003262;
@@ -108,7 +108,7 @@
   padding-bottom:7.5px;
   font-weight: 400;
   border-left:none;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.25px;
 }
 
 .mentor-splash-preview{
@@ -122,7 +122,7 @@
   border-radius: 10px;
   margin-bottom: 60px;
   font-weight: 400;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.25px;
 }
 .mentor-splash-button:hover{
   background-color: #003262;

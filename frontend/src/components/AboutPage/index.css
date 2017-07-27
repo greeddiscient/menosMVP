@@ -15,7 +15,7 @@
   padding-top:7.5px;
   padding-bottom:7.5px;
   font-weight: 400;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.25px;
   border-left:none;
 }
 .about-menos{
@@ -31,12 +31,12 @@
   color: #FDB515;
   margin-top:0px;
   margin-bottom:20px;
-  font-weight:700;
-  letter-spacing: 1.5px;
+  font-weight:400;
+  letter-spacing: 1.25px;
 }
 .about-content{
   font-family: 'Khula', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 18px;
   margin:0;
   color:#fffafa;
@@ -55,7 +55,7 @@
   padding-top:7.5px;
   padding-bottom:7.5px;
   border-left:none;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.25px;
 
 }
 .founders{
@@ -131,7 +131,7 @@
   margin-top:0;
   background-color:#003262;
   font-weight: 400;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.25px;
 }
 .founders .founder-details .founder-education{
   font-family: 'Khula', sans-serif;
@@ -140,7 +140,7 @@
   padding: 2.5px 10px 2.5px 10px;
   background-color:#003262;
   margin: 0;
-  font-weight: 400;
+  font-weight: 300;
 }
 .founders .founder-details .founder-degree{
   font-family: 'Open Sans', sans-serif;
@@ -149,13 +149,13 @@
   padding: 2.5px 10px 2.5px 10px;
   background-color:#003262;
   margin: 0;
-  font-weight: 400;
+  font-weight: 300;
 }
 .founders .founder-details .founder-message{
   margin-top:15px;
   text-align:center;
   font-family: 'Khula', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   padding: 2.5px 20px 15px 20px;
   color:#fffafa;
   font-size:16px;
