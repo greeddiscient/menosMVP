@@ -11,11 +11,16 @@ export default class Footer extends React.Component {
   render() {
     return (
       <div className="footer">
-        <div className="contact-us">
-          Reach Out Anytime:
+        <div className="reach-out">
+          <div className="contact-us">
+            Reach Out Anytime:
+          </div>
+          <div className="email">
+            support@menos.id
+          </div>
         </div>
-        <div className="email">
-          support@menos.id
+        <div className="copyright">
+          © 2017 Menos. All Rights Reserved.
         </div>
       </div>
     );

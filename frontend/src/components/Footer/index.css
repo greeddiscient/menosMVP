@@ -26,3 +26,12 @@
   font-size:18px;
   display:inline;
 }
+
+.footer .copyright{
+  margin-top: 5px;
+  display: block;
+  font-family: 'PT Sans', sans-serif;
+  color: #fffafa;
+  font-weight: 400;
+  font-size:18px;
+}
